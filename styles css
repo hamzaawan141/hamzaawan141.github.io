@@ -49,22 +49,6 @@ section h2 {
     margin-bottom: 10px;
 }
 
-/* Specific Section Styling */
-#home {
-    background-color: #f4f4f4;
-    padding: 100px 20px;
-}
-
-#home h1 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-#about, #services, #experience, #portfolio, #contact {
-    background-color: #f8f8f8;
-    margin: 20px 0;
-}
-
 ul {
     list-style-type: none;
     margin-top: 10px;
@@ -74,10 +58,58 @@ ul li {
     margin: 5px 0;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
+/* Home Section with Background Image */
+#home {
+    background: url('https://your-image-url.com/image.jpg') no-repeat center center/cover;
     color: #fff;
-    text-align: center;
-    padding: 10px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.2em;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Keyframes for Fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
